@@ -4,8 +4,8 @@ from datetime import datetime
 from keras import backend as K
 from keras.callbacks import Callback
 
-from .inference import BasicInference
-from .io_utils import logging
+from inference import BasicInference
+from io_utils import logging
 
 
 class LogLearningRate(Callback):

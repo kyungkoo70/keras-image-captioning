@@ -1,7 +1,7 @@
 import pytest
 
-from .preprocessors import CaptionPreprocessor
-from .word_vectors import Glove, Fasttext
+from preprocessors import CaptionPreprocessor
+from word_vectors import Glove, Fasttext
 
 
 class WordVectorTestBase(object):

@@ -9,10 +9,10 @@ from keras.layers.wrappers import Bidirectional
 from keras.optimizers import Adam
 from keras.regularizers import l1_l2
 
-from .config import active_config
-from .losses import categorical_crossentropy_from_logits
-from .metrics import categorical_accuracy_with_variable_timestep
-from .word_vectors import get_word_vector_class
+from config import active_config
+from losses import categorical_crossentropy_from_logits
+from metrics import categorical_accuracy_with_variable_timestep
+from word_vectors import get_word_vector_class
 
 
 class ImageCaptioningModel(object):

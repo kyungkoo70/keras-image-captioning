@@ -7,7 +7,7 @@ from keras.preprocessing.image import (ImageDataGenerator, img_to_array,
                                        load_img)
 from keras.preprocessing.text import Tokenizer, text_to_word_sequence
 
-from .config import active_config
+from config import active_config
 
 
 class ImagePreprocessor(object):

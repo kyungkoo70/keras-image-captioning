@@ -3,9 +3,9 @@ import pytest
 import sh
 import shutil
 
-from .config import active_config, FileConfigBuilder
-from .io_utils import path_from_var_dir
-from .hyperparam_search import (itertools, main, HyperparamSearch,
+from config import active_config, FileConfigBuilder
+from io_utils import path_from_var_dir
+from hyperparam_search import (itertools, main, HyperparamSearch,
                                 TrainingCommand)
 
 # Because we spawn other processes, we cannot mock anything in them. So, we

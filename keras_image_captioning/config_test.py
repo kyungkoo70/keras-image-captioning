@@ -2,7 +2,7 @@ import pytest
 
 from datetime import timedelta
 
-from . import config
+from config import *
 
 
 class TestStaticConfigBuilder(object):

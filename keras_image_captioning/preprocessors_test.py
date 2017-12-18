@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from .datasets import get_dataset_instance
-from .preprocessors import CaptionPreprocessor, ImagePreprocessor
+from datasets import get_dataset_instance
+from preprocessors import CaptionPreprocessor, ImagePreprocessor
 
 
 class TestImagePreprocessor(object):

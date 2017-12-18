@@ -1,4 +1,4 @@
-from . import io_utils
+from io_utils import *
 
 
 def test_path_from_var_dir():

@@ -2,7 +2,7 @@ import pytest
 
 from operator import attrgetter
 
-from . import datasets
+from datasets import *
 
 
 class TestFlickr8kDataset(object):

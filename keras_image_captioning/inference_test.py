@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from .inference import BasicInference, BeamSearchInference, Caption, NLargest
-from .dataset_providers import DatasetProvider
+from inference import BasicInference, BeamSearchInference, Caption, NLargest
+from dataset_providers import DatasetProvider
 
 
 class TestBasicInference(object):

@@ -4,7 +4,7 @@ from itertools import islice
 from operator import attrgetter
 from types import GeneratorType
 
-from .dataset_providers import DatasetProvider
+from dataset_providers import DatasetProvider
 
 
 class TestDatasetProvider(object):

@@ -3,10 +3,10 @@ import pytest
 
 from keras.regularizers import l1_l2
 
-from . import config
-from .dataset_providers import DatasetProvider
-from .models import ImageCaptioningModel
-from .word_vectors import Glove
+from config import *
+from dataset_providers import DatasetProvider
+from models import ImageCaptioningModel
+from word_vectors import Glove
 
 _VOCAB_SIZE = 100
 

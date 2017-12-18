@@ -7,14 +7,14 @@ import traceback
 from keras.callbacks import (CSVLogger, EarlyStopping, ModelCheckpoint,
                              ReduceLROnPlateau, TensorBoard)
 
-from . import config
-from . import io_utils
-from .callbacks import (LogLearningRate, LogMetrics, LogTimestamp,
+from config import *
+from io_utils import *
+from callbacks import (LogLearningRate, LogMetrics, LogTimestamp,
                         StopAfterTimedelta, StopWhenValLossExploding)
-from .common_utils import parse_timedelta
-from .io_utils import logging
-from .dataset_providers import DatasetProvider
-from .models import ImageCaptioningModel
+from common_utils import parse_timedelta
+from io_utils import logging
+from dataset_providers import DatasetProvider
+from models import ImageCaptioningModel
 
 
 class Training(object):

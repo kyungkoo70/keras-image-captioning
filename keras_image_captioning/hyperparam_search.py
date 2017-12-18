@@ -12,11 +12,11 @@ from threading import Lock, Semaphore
 from time import sleep
 from tempfile import gettempdir, NamedTemporaryFile
 
-from .config import (active_config, write_to_file,
+from config import (active_config, write_to_file,
                      Embed300FineRandomConfigBuilder)
-from .common_utils import parse_timedelta
-from .datasets import get_dataset_instance
-from .io_utils import mkdir_p, logging
+from common_utils import parse_timedelta
+from datasets import get_dataset_instance
+from io_utils import mkdir_p, logging
 
 
 class HyperparamSearch(object):

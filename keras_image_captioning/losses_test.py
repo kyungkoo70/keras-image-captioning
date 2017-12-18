@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 import tensorflow as tf
 
-from .losses import categorical_crossentropy_from_logits
+from losses import categorical_crossentropy_from_logits
 
 
 @pytest.fixture

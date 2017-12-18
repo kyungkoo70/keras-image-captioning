@@ -8,11 +8,11 @@ from keras.engine.training import GeneratorEnqueuer
 from time import sleep
 from tqdm import tqdm
 
-from .config import FileConfigBuilder, active_config
-from .dataset_providers import DatasetProvider
-from .io_utils import logging, write_yaml_file
-from .metrics import BLEU, CIDEr, METEOR, ROUGE
-from .models import ImageCaptioningModel
+from config import FileConfigBuilder, active_config
+from dataset_providers import DatasetProvider
+from io_utils import logging, write_yaml_file
+from metrics import BLEU, CIDEr, METEOR, ROUGE
+from models import ImageCaptioningModel
 
 
 class BasicInference(object):

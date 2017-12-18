@@ -5,9 +5,9 @@ import sys
 
 from datetime import timedelta
 
-from . import config
-from . import training
-from .io_utils import path_from_var_dir
+from config import *
+from training import *
+from io_utils import path_from_var_dir
 
 
 TRAINING_LABEL = 'test/training'

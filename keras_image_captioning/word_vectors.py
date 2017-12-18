@@ -1,8 +1,8 @@
 import numpy as np
 from keras import backend as K, initializers
 
-from .io_utils import path_from_var_dir
-from .preprocessors import CaptionPreprocessor
+from io_utils import path_from_var_dir
+from preprocessors import CaptionPreprocessor
 
 
 class WordVector(object):

@@ -3,8 +3,8 @@ import re
 
 from collections import defaultdict, namedtuple
 
-from . import io_utils
-from .config import active_config
+from io_utils import *
+from config import active_config
 
 
 Datum = namedtuple('Datum', 'img_filename img_path '

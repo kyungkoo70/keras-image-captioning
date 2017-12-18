@@ -1,5 +1,5 @@
 from datetime import timedelta
-from . import common_utils
+from common_utils import *
 
 
 def test_parse_timedelta():

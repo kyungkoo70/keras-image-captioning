@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 import tensorflow as tf
 
-from .metrics import (BLEU, CIDEr, METEOR, ROUGE,
+from metrics import (BLEU, CIDEr, METEOR, ROUGE,
                       categorical_accuracy_with_variable_timestep)
 
 

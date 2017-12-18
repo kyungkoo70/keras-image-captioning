@@ -4,10 +4,10 @@ from copy import copy
 from math import ceil
 from operator import attrgetter
 
-from .common_utils import flatten_list_2d
-from .config import active_config
-from .datasets import get_dataset_instance
-from .preprocessors import CaptionPreprocessor, ImagePreprocessor
+from common_utils import flatten_list_2d
+from config import active_config
+from datasets import get_dataset_instance
+from preprocessors import CaptionPreprocessor, ImagePreprocessor
 
 
 class DatasetProvider(object):
