@@ -62,9 +62,7 @@ class DatasetProvider(object):
         return self._caption_preprocessor
 
     def training_set(self, include_datum=False):
-        for batch in self._batch_generator(self._dataset.training_set,
-                                           include_datum,
-                                           random_transform=True):
+        for batch in self._batch_generator(self._dataset.training_set, include_datum, random_transform=True):
             yield batch
 
     def validation_set(self, include_datum=False):
@@ -89,8 +87,7 @@ class DatasetProvider(object):
             training_captions = map(attrgetter('caption_txt'), training_set)
         self._caption_preprocessor.fit_on_captions(training_captions)
 
-    def _batch_generator(self, datum_list, include_datum=False,
-                         random_transform=True):
+    def _batch_generator(self, datum_list, include_datum=False, random_transform=True):
         # TODO Make it thread-safe. Currently only suitable for workers=1 in
         # fit_generator.
         datum_list = copy(datum_list)
@@ -109,8 +106,8 @@ class DatasetProvider(object):
 
     def _preprocess_batch(self, datum_batch, include_datum=False,
                           random_transform=True):
-        imgs_path = map(attrgetter('img_path'), datum_batch)
-        captions_txt = map(attrgetter('caption_txt'), datum_batch)
+        imgs_path = list(map(attrgetter('img_path'), datum_batch))
+        captions_txt = list(map(attrgetter('caption_txt'), datum_batch))
 
         img_batch = self._image_preprocessor.preprocess_images(imgs_path,
                                                             random_transform)

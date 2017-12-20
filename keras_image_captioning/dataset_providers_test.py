@@ -14,22 +14,22 @@ class TestDatasetProvider(object):
 
     def test_training_set(self, dataset_provider, mocker):
         mocker.patch.object(dataset_provider, '_batch_generator',
-                            lambda _, __: range(5))
+                            lambda _, __, random_transform: range(5))
         generator = dataset_provider.training_set()
         assert isinstance(generator, GeneratorType)
-        assert list(generator) == range(5)
+        assert list(generator) == list(range(5))
 
     def test__batch_generator(self, dataset_provider, mocker):
         mocker.patch.object(dataset_provider, '_preprocess_batch',
-                            lambda x, _: x)
+                            lambda x, _, random_transform: x)
 
-        datum_list = range(10)
+        datum_list = list(range(10))
         generator = dataset_provider._batch_generator(datum_list)
         results = [next(generator) for _ in range(4)]
         assert [len(x) for x in results] == [4, 4, 2, 4]
         assert sorted(sum(results[:-1], [])) == datum_list
 
-        datum_list = range(12)
+        datum_list = list(range(12))
         generator = dataset_provider._batch_generator(datum_list)
         assert isinstance(generator, GeneratorType)
 
