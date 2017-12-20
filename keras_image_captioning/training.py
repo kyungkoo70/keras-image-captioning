@@ -103,7 +103,7 @@ class Training(object):
                 epochs=self._epochs,
                 validation_data=self._dataset_provider.validation_set(),
                 validation_steps=self._dataset_provider.validation_steps,
-                max_q_size=self._max_q_size,
+                max_queue_size=self._max_q_size,
                 workers=self._workers,
                 callbacks=self._callbacks,
                 verbose=self._verbose)
