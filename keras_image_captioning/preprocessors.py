@@ -59,7 +59,7 @@ class CaptionPreprocessor(object):
           words_min_occur: words whose occurrences are less than this are
                            considered rare words
         """
-        self._tokenizer = Tokenizer()
+        self._tokenizer = Tokenizer(num_words=100000)
         self._rare_words_handling = (rare_words_handling or
                                      active_config().rare_words_handling)
         self._words_min_occur = (words_min_occur or
@@ -146,6 +146,7 @@ class CaptionPreprocessor(object):
                                                 padding='post')
         captions_one_hot = map(self._tokenizer.sequences_to_matrix,
                                np.expand_dims(captions_extended1, -1))
+        # print(list(captions_one_hot))
         captions_one_hot = np.array(list(captions_one_hot), dtype='int')
 
         # Decrease/shift word index by 1.
