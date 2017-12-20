@@ -3,7 +3,7 @@ import re
 
 from collections import defaultdict, namedtuple
 
-from io_utils import *
+import io_utils
 from config import active_config
 
 

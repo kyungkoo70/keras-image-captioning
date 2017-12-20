@@ -1,3 +1,4 @@
+import config
 import fire
 import os
 import signal
@@ -7,8 +8,7 @@ import traceback
 from keras.callbacks import (CSVLogger, EarlyStopping, ModelCheckpoint,
                              ReduceLROnPlateau, TensorBoard)
 
-from config import *
-from io_utils import *
+import io_utils
 from callbacks import (LogLearningRate, LogMetrics, LogTimestamp,
                         StopAfterTimedelta, StopWhenValLossExploding)
 from common_utils import parse_timedelta
