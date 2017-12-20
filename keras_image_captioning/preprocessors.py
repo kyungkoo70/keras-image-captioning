@@ -146,7 +146,7 @@ class CaptionPreprocessor(object):
                                                 padding='post')
         captions_one_hot = map(self._tokenizer.sequences_to_matrix,
                                np.expand_dims(captions_extended1, -1))
-        captions_one_hot = np.array(captions_one_hot, dtype='int')
+        captions_one_hot = np.array(list(captions_one_hot), dtype='int')
 
         # Decrease/shift word index by 1.
         # Shifting `captions_one_hot` makes the padding word
