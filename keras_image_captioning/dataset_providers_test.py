@@ -63,5 +63,5 @@ class TestDatasetProvider(object):
         (imgs_input, captions_input), captions_output, datum_batch = results
 
         all_captions_txt = map(attrgetter('all_captions_txt'), datum_batch)
-        assert len(all_captions_txt) == batch_size
+        assert len(list(all_captions_txt)) == batch_size
         assert all(len(captions) == 5 for captions in all_captions_txt)
