@@ -109,15 +109,39 @@ class DatasetProvider(object):
         imgs_path = list(map(attrgetter('img_path'), datum_batch))
         captions_txt = list(map(attrgetter('caption_txt'), datum_batch))
 
+        # for debugging
+        # print('imgs_path: {}'.format(len(imgs_path)))
+        # print('captions_txt: {}'.format(len(captions_txt)))
+        # print(captions_txt)
+
         img_batch = self._image_preprocessor.preprocess_images(imgs_path,
                                                             random_transform)
+
+        # debugging
+        # print('img_batch: type: {}'.format(type(img_batch)))
+        # print('img_batch: len: {}'.format(len(list(img_batch))))
+
         caption_batch = self._caption_preprocessor.encode_captions(captions_txt)
 
-        imgs_input = self._image_preprocessor.preprocess_batch(img_batch)
+        # debugging
+        # print('caption_batch: type: {}'.format(type(caption_batch)))
+        # print('caption_batch: len: {}'.format(len(caption_batch)))
+
+        imgs_input = self._image_preprocessor.preprocess_batch(list(img_batch))
         captions = self._caption_preprocessor.preprocess_batch(caption_batch)
+        # debugging
+        # print('imgs_input: type: {}'.format(type(imgs_input)))
+        # print('imgs_input: shape: {}'.format(imgs_input.shape))
+        # print('captions: type: {}'.format(type(captions)))
+        # print('captions: len: {}'.format(len(captions)))
+        # print(captions)
 
         captions_input, captions_output = captions
         X, y = [imgs_input, captions_input], captions_output
+
+        # debuggin
+        # print('X info: type: {}, len: {}'.format(type(X), len(X)))
+        # print(list(X))
 
         if include_datum:
             return X, y, datum_batch
